@@ -15,7 +15,6 @@ const Form = () => {
     phone: '',
     country: '',
     region: '',
-    city: '',
     pan: '',
     aadhar: '',
   });
@@ -37,11 +36,11 @@ const Form = () => {
   };
 
   const handleCountryChange = (val) => {
-    setFormData({ ...formData, country: val, region: '', city: '' });
+    setFormData({ ...formData, country: val, region: ''});
   };
 
   const handleRegionChange = (val) => {
-    setFormData({ ...formData, region: val, city: '' });
+    setFormData({ ...formData, region: val });
   };
   
   const handleCityChange = (val) => {
@@ -79,9 +78,6 @@ const Form = () => {
     }
     if (field === 'region' && !value) {
       error = 'Region is required';
-    }
-    if (field === 'city' && !value) {
-      error = 'city is required';
     }
     if (field === 'pan' && (!value || !/[A-Z0-9]{10}/.test(value))) {
       error = 'PAN must be a combination of uppercase characters and numbers';
