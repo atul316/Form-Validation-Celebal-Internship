@@ -108,8 +108,8 @@ const Form = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-slate-600">
-      <form className="w-full max-w-lg p-8 rounded-lg shadow-lg bg-slate-300" onSubmit={handleSubmit}>
+    <div className="flex items-center justify-center min-h-screen p-8 bg-slate-600">
+      <form className="w-full p-8 rounded-lg shadow-lg bg-slate-300 max-w-[90vh]" onSubmit={handleSubmit}>
         <h2 className="mb-6 text-3xl font-bold text-green-500 underline">Registration Form</h2>
         {[
           { name: 'firstName', label: 'First Name' },
@@ -178,6 +178,7 @@ const Form = () => {
               name="phone"
               value={formData.phone}
               onChange={handlePhoneChange}
+              onBlur={handleBlur}
               defaultCountry="IN"
               className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 errors.phone ? 'border-red-500' : ''
@@ -193,6 +194,7 @@ const Form = () => {
           <CountryDropdown
             value={formData.country}
             onChange={(val) => handleCountryChange(val)}
+            onBlur={handleBlur}
             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
               errors.country ? 'border-red-500' : ''
             }`}
@@ -207,6 +209,7 @@ const Form = () => {
             country={formData.country}
             value={formData.region}
             onChange={(val) => handleRegionChange(val)}
+            onBlur={handleBlur}
             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
               errors.region ? 'border-red-500' : ''
             }`}
