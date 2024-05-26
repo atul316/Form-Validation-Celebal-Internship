@@ -11,7 +11,6 @@ const Form = () => {
     username: '',
     email: '',
     password: '',
-    countryCode: '',
     phone: '',
     country: '',
     region: '',
